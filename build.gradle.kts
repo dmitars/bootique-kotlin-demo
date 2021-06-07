@@ -4,7 +4,7 @@ import org.jetbrains.kotlin.gradle.dsl.Coroutines
 
 plugins {
     application
-    kotlin("jvm").version("1.3.11")
+    kotlin("jvm").version("1.5.10")
 }
 
 val bootiqueVersion: String by project
@@ -21,15 +21,15 @@ application {
 dependencies {
     implementation(enforcedPlatform("io.bootique.bom:bootique-bom:$bootiqueVersion"))
 
-    compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    compile("org.jetbrains.kotlin:kotlin-reflect")
-    compile("org.jetbrains.kotlin:kotlin-script-util")
-    compile("org.jetbrains.kotlin:kotlin-compiler-embeddable")
-    compile("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:$coroutinesVersion")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.jetbrains.kotlin:kotlin-script-util")
+    implementation("org.jetbrains.kotlin:kotlin-compiler-embeddable")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:$coroutinesVersion")
 
-    compile("io.bootique.kotlin:bootique-kotlin")
-    compile("io.bootique.kotlin:bootique-kotlin-config")
-    compile("io.bootique.kotlin:bootique-kotlin-undertow")
+    implementation("io.bootique.kotlin:bootique-kotlin")
+    implementation("io.bootique.kotlin:bootique-kotlin-config")
+    implementation("io.bootique.kotlin:bootique-kotlin-undertow")
 }
 
 tasks.withType<KotlinCompile> {
